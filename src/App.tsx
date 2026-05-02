@@ -91,45 +91,14 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
 
   return (
     <div className="min-h-screen selection:bg-brand-primary/30 font-sans bg-brand-soft">
-{/* Floating Surprise Alert - Mais chamativo e evidente */}
+{/* Alerta de surpresa movido para seção menor - não cobre a foto no mobile */}
 <motion.div 
-        initial={{ y: -100, scale: 0.8 }}
-        animate={{ y: 0, scale: 1 }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-pink-500 via-red-500 to-pink-500 text-white px-6 py-3 rounded-full shadow-[0_0_40px_rgba(236,72,153,0.8)] font-black flex items-center gap-2 text-base md:text-xl border-4 border-white/30 backdrop-blur-sm min-w-[95vw] md:min-w-auto justify-center flex-wrap"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-gradient-to-r from-pink-500 via-[#A47DAB] to-pink-500 text-white px-4 py-2 rounded-full shadow-lg font-black flex items-center justify-center gap-2 text-sm"
       >
-        <motion.span
-          animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 0.5, repeat: Infinity }}
-          className="text-2xl md:text-3xl"
-        >
-          🎉
-        </motion.span>
-        <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 animate-pulse" />
-        <span className="text-lg md:text-2xl">🚨 É UMA SURPRESA! 🚨</span>
-        <span className="text-yellow-300 text-sm md:text-base">FESTA SECRETA!</span>
-        <motion.span
-          animate={{ rotate: [0, -15, 15, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 0.5, repeat: Infinity }}
-          className="text-2xl md:text-3xl"
-        >
-          🎁
-        </motion.span>
-        <span className="font-black text-yellow-300 text-sm md:text-xl">NÃO CONTE PRA NINGUÉM!</span>
-        <motion.span
-          animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 0.5, repeat: Infinity }}
-          className="text-2xl md:text-3xl"
-        >
-          🤫
-        </motion.span>
-        <span className="text-pink-200 text-xs md:text-sm">SIGILO TOTAL!</span>
-        <motion.span
-          animate={{ rotate: [0, -15, 15, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 0.5, repeat: Infinity }}
-          className="text-2xl md:text-3xl"
-        >
-          🔒
-        </motion.span>
+        <span>🤫 SURPRESA! Não conte!</span>
       </motion.div>
 
       {/* Hero Section */}
@@ -390,10 +359,10 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
               whileHover={{ scale: 1.02 }}
               className="md:col-span-5 bg-white p-12 rounded-[3.5rem] shadow-xl shadow-brand-primary/5 flex flex-col justify-center gap-6 border border-brand-primary/5 min-h-[280px]"
             >
-              <div className="flex items-center gap-4">
+<div className="flex items-center gap-4">
                 <div className="text-6xl animate-bounce">🤫</div>
                 <div>
-                  <h3 className="text-2xl font-display font-black text-brand-dark mb-2">BICO CALADO!</h3>
+                  <h3 className="text-2xl font-display font-black text-[#A47DAB] mb-2">BICO CALADO!</h3>
                   <p className="text-slate-500 font-bold leading-relaxed text-lg">
                     A Aléxia não pode saber de NADA até o momento do "SURPRESA!".
                   </p>
