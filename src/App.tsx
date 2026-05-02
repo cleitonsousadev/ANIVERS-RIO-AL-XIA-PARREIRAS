@@ -91,14 +91,45 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
 
   return (
     <div className="min-h-screen selection:bg-brand-primary/30 font-sans bg-brand-soft">
-      {/* Floating Surprise Alert */}
-      <motion.div 
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-brand-primary text-white px-6 py-2 rounded-full shadow-2xl font-bold flex items-center gap-2 text-sm md:text-base border-2 border-white/20 backdrop-blur-sm"
+{/* Floating Surprise Alert - Mais chamativo e evidente */}
+<motion.div 
+        initial={{ y: -100, scale: 0.8 }}
+        animate={{ y: 0, scale: 1 }}
+        className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-pink-500 via-red-500 to-pink-500 text-white px-6 py-3 rounded-full shadow-[0_0_40px_rgba(236,72,153,0.8)] font-black flex items-center gap-2 text-base md:text-xl border-4 border-white/30 backdrop-blur-sm min-w-[95vw] md:min-w-auto justify-center flex-wrap"
       >
-        <ShieldCheck className="w-4 h-4" />
-        🤫 É SURPRESA! NÃO CONTE PRA ELA!
+        <motion.span
+          animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 0.5, repeat: Infinity }}
+          className="text-2xl md:text-3xl"
+        >
+          🎉
+        </motion.span>
+        <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 animate-pulse" />
+        <span className="text-lg md:text-2xl">🚨 É UMA SURPRESA! 🚨</span>
+        <span className="text-yellow-300 text-sm md:text-base">FESTA SECRETA!</span>
+        <motion.span
+          animate={{ rotate: [0, -15, 15, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 0.5, repeat: Infinity }}
+          className="text-2xl md:text-3xl"
+        >
+          🎁
+        </motion.span>
+        <span className="font-black text-yellow-300 text-sm md:text-xl">NÃO CONTE PRA NINGUÉM!</span>
+        <motion.span
+          animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 0.5, repeat: Infinity }}
+          className="text-2xl md:text-3xl"
+        >
+          🤫
+        </motion.span>
+        <span className="text-pink-200 text-xs md:text-sm">SIGILO TOTAL!</span>
+        <motion.span
+          animate={{ rotate: [0, -15, 15, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 0.5, repeat: Infinity }}
+          className="text-2xl md:text-3xl"
+        >
+          🔒
+        </motion.span>
       </motion.div>
 
       {/* Hero Section */}
@@ -123,8 +154,8 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
           />
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+<motion.div 
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: 0 }}
           className="z-10 text-center max-w-3xl"
         >
