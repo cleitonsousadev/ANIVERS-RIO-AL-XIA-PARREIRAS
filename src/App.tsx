@@ -128,6 +128,16 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
           animate={{ opacity: 1, y: 0 }}
           className="z-10 text-center max-w-3xl"
         >
+          {/* Banner SURPRESA acima da foto - não tapa a foto */}
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6 bg-gradient-to-r from-pink-500 via-[#A47DAB] to-pink-500 text-white px-8 py-3 rounded-2xl shadow-xl font-black text-lg inline-flex items-center gap-3"
+          >
+            <span>🤫</span>
+            <span>SURPRESA! Não conte para a Aléxia!</span>
+          </motion.div>
+
           <div className="relative inline-block mb-12">
             {/* Photo Placeholder */}
 <motion.div
@@ -361,8 +371,8 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
             >
 <div className="flex items-center gap-4">
                 <div className="text-6xl animate-bounce">🤫</div>
-                <div>
-                  <h3 className="text-2xl font-display font-black text-[#A47DAB] mb-2">BICO CALADO!</h3>
+<div>
+                  <h3 className="text-2xl font-display font-black text-[#A47DAB] mb-2">BICO CALADO! É DA SURPRESA</h3>
                   <p className="text-slate-500 font-bold leading-relaxed text-lg">
                     A Aléxia não pode saber de NADA até o momento do "SURPRESA!".
                   </p>
