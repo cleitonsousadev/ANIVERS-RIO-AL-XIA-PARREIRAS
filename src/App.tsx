@@ -133,7 +133,7 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
       </motion.div>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white px-6 pt-20">
+<section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white px-6 pt-28 md:pt-20">
         {/* Abstract Background Shapes */}
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
           <motion.div 
