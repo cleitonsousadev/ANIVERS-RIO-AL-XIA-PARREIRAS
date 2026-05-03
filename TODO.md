@@ -1,8 +1,1 @@
-# Task: Update Cleiton to Marina with new WhatsApp link
-
-## Steps:
-- [x] 1. Create TODO.md
-- [x] 2. Edit src/App.tsx (3 replacements for name/link)
-- [x] 3. Start dev server with `npm run dev`
-- [ ] 4. Push changes to new GitHub branch and create PR
-- [ ] 5. Mark complete
+# TODO: Fix Vercel Deployment Error\n\n## Steps to complete:\n- [x] Step 1: Update package.json (add start script, homepage, clean deps, downgrade React)\n- [x] Step 2: Fix motion import in src/App.tsx\n- [x] Step 3: Updated tsconfig.json for React 18\n- [ ] Step 4: Run `npm install`\n- [ ] Step 5: Run `npm run build` to verify\n- [ ] Step 6: Test local preview `npm run preview`\n- [ ] Step 7: Commit and push to trigger Vercel redeploy\n- [ ] Step 8: Verify deployment works

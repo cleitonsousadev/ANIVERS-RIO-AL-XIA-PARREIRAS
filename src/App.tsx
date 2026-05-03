@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Calendar, 
   Clock, 
@@ -24,12 +24,12 @@ import {
 // Informações do evento
 const EVENT_INFO = {
   name: "Aléxia Parreiras",
-  date: new Date("2026-05-09T18:00:00"),
+  date: new Date("2025-05-09T18:00:00"),
   location: "Casa da Bruna",
   address: "Av Estrela do Sul, 662, bairro Martins, Uberlândia - MG, CEP 38400-339",
   mapsLink: "https://www.google.com/maps/search/?api=1&query=Av+Estrela+do+Sul+662+Uberlândia",
-  contacts: [
-{ name: "Marina", link: "http://wa.me/5534984186829" }
+contacts: [
+    { name: "Marina", link: "http://wa.me/5534984186829" },
     { name: "Bruna", link: "https://wa.me/55556492399739" }
   ]
 };
@@ -47,7 +47,7 @@ export default function App() {
     attending: 'sim',
     guests: 1,
     message: '',
-contact: 'Marina'
+    contact: 'Marina'
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -388,7 +388,7 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-display font-black text-brand-dark mb-6">Confirmar?</h2>
-Não deixe para a última hora, Marina e Bruna estão ansiosos!
+            <p className="text-slate-500 text-lg font-medium">Não deixe para a última hora, Marina e Bruna estão ansiosos!</p>
           </div>
 
           <motion.form 
