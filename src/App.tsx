@@ -37,7 +37,7 @@ contacts: [
 export default function App() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
-    hours: 0,
+    hours: 0, 
     minutes: 0,
     seconds: 0
   });
