@@ -24,7 +24,7 @@ import {
 // Informações do evento
 const EVENT_INFO = {
   name: "Aléxia Parreiras",
-  date: new Date("2025-05-09T18:00:00"),
+  date: new Date("2026-05-09T18:00:00"),
   location: "Casa da Bruna",
   address: "Av Estrela do Sul, 662, bairro Martins, Uberlândia - MG, CEP 38400-339",
   mapsLink: "https://www.google.com/maps/search/?api=1&query=Av+Estrela+do+Sul+662+Uberlândia",
