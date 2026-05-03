@@ -30,7 +30,7 @@ const EVENT_INFO = {
   mapsLink: "https://www.google.com/maps/search/?api=1&query=Av+Estrela+do+Sul+662+Uberlândia",
 contacts: [
     { name: "Marina", link: "http://wa.me/5534984186829" },
-    { name: "Bruna", link: "https://wa.me/55556492399739" } 
+    { name: "Bruna", link: "https://wa.me/55556492399739" }
   ]
 };
 
