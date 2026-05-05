@@ -23,7 +23,7 @@ import {
 
 // Informações do evento
 const EVENT_INFO = {
-  name: "Aléxia Parreiras",
+  name: "ALÉXIA",
   date: new Date("2026-05-09T18:00:00"),
   location: "Casa da Bruna",
   address: "Av Estrela do Sul, 662, bairro Martins, Uberlândia - MG, CEP 38400-339",
@@ -78,13 +78,14 @@ export default function App() {
     const selectedContact = EVENT_INFO.contacts.find(c => c.name === formData.contact);
     const waBaseUrl = selectedContact?.link || EVENT_INFO.contacts[0].link;
     
-    const text = `Olá! Confirmação de presença para o aniversário da Aléxia:
-Nome: ${formData.name}
+const text = `Confirmação de presença para o aniversário da ALÉXIA!
+ Nome: ${formData.name}
 Presença: ${formData.attending === 'sim' ? 'Sim, eu vou!' : 'Não poderei ir, mas boa festa!'}
 Quantidade de pessoas: ${formData.guests}
-Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
+Mensagem: ${formData.message || 'Sem mensagem adicional.'}`;
 
     const encodedText = encodeURIComponent(text);
+
     window.location.href = `${waBaseUrl}?text=${encodedText}`;
     setIsSubmitted(true);
   };
@@ -134,8 +135,9 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
             animate={{ opacity: 1, y: 0 }}
             className="mb-6 bg-gradient-to-r from-pink-500 via-[#A47DAB] to-pink-500 text-white px-8 py-3 rounded-2xl shadow-xl font-black text-lg inline-flex items-center gap-3"
           >
-            <span>🤫</span>
-            <span>SURPRESA! Não conte para a Aléxia!</span>
+<span>🤫</span>
+            <span>SURPRESA! Não conte para a ALÉXIA!</span>
+          
           </motion.div>
 
           <div className="relative inline-block mb-12">
@@ -147,8 +149,8 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
               className="w-56 h-56 md:w-72 md:h-72 bg-white p-4 rounded-3xl shadow-2xl relative z-10 overflow-hidden ring-8 ring-brand-primary/5"
             >
 <img 
-                src="/bem.png" 
-                alt="Aléxia Parreiras" 
+src="/bem.png" 
+alt="ALÉXIA" 
                 className="w-full h-full object-cover rounded-2xl"
               />
             </motion.div>
@@ -167,7 +169,7 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
               transition={{ duration: 5, repeat: Infinity }}
               className="absolute -bottom-4 -left-12 z-20 bg-white text-brand-primary px-4 py-2 rounded-2xl shadow-xl font-black text-sm flex items-center gap-2 border-2 border-brand-primary/10 -rotate-12"
             >
-              <Heart className="w-4 h-4 fill-brand-primary text-brand-primary" /> ALÉXIA
+ <Heart className="w-4 h-4 fill-brand-primary text-brand-primary" /> ALÉXIA
             </motion.div>
           </div>
           
@@ -374,7 +376,7 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
 <div>
                   <h3 className="text-2xl font-display font-black text-[#A47DAB] mb-2">BICO CALADO! É DA SURPRESA</h3>
                   <p className="text-slate-500 font-bold leading-relaxed text-lg">
-                    A Aléxia não pode saber de NADA até o momento do "SURPRESA!".
+A ALÉXIA não pode saber de NADA até o momento do "SURPRESA!"
                   </p>
                 </div>
               </div>
@@ -501,8 +503,9 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
         >
           🎁
         </motion.div>
-        <p className="text-brand-dark font-black tracking-[0.3em] uppercase text-xs mb-4">Aléxia Parreiras • Uberlândia/MG</p>
+        <p className="text-brand-dark font-black tracking-[0.3em] uppercase text-xs mb-4">ALÉXIA • Uberlândia/MG</p>
         <p className="text-slate-400 text-sm max-w-xs mx-auto italic font-medium px-6">
+
           Se você contar pra ela, o presente vai ter que ser o triplo do preço! 💸
         </p>
       </footer>

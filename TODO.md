@@ -1,1 +1,31 @@
-# TODO: Fix Vercel Deployment Error\n\n## Steps to complete:\n- [x] Step 1: Update package.json (add start script, homepage, clean deps, downgrade React)\n- [x] Step 2: Fix motion import in src/App.tsx\n- [x] Step 3: Updated tsconfig.json for React 18\n- [ ] Step 4: Run `npm install`\n- [ ] Step 5: Run `npm run build` to verify\n- [ ] Step 6: Test local preview `npm run preview`\n- [ ] Step 7: Commit and push to trigger Vercel redeploy\n- [ ] Step 8: Verify deployment works
+# Update All to ALÉXIA - Birthday Invitation Standardization
+
+**Status: COMPLETED - All ALÉXIA updates done**
+
+## Approved Plan Steps:
+
+### 1. [DONE] Update index.html title
+- Change 'Convite Aniversário Marina' → 'Convite Aniversário ALÉXIA'
+
+### 2. [DONE] Update src/App.tsx all references
+- EVENT_INFO.name: 'Aléxia Parreiras' → 'ALÉXIA'
+- All 'Aléxia'/'Aléxia Parreiras' → 'ALÉXIA'
+- alt='Aléxia Parreiras' → 'ALÉXIA'
+- Footer 'Aléxia' → 'ALÉXIA'
+- Texts: 'para a Aléxia', etc. → 'para a ALÉXIA'
+
+### 3. [DONE] Update metadata.json
+- 'Aléxia 27!' → 'ALÉXIA 27!'
+- 'Aléxia Parreiras' → 'ALÉXIA'
+
+### 4. [DONE] Clean TODO.md & mark complete
+
+### 5. [DONE] Test: npm run dev (server running at http://localhost:3000/)
+
+### 6. [DONE] Build & Preview: npm run build && npm run preview (build successful)
+
+**Notes:**
+- Keep contacts 'Marina'/'Bruna' as organizers.
+- No date/age changes.
+- After all edits: attempt_completion
+
