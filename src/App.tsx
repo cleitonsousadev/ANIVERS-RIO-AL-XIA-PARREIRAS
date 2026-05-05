@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Calendar, 
   Clock, 
@@ -23,21 +23,21 @@ import {
 
 // Informações do evento
 const EVENT_INFO = {
-  name: "Aléxia Parreiras",
+  name: "ALÉXIA",
   date: new Date("2026-05-09T18:00:00"),
   location: "Casa da Bruna",
   address: "Av Estrela do Sul, 662, bairro Martins, Uberlândia - MG, CEP 38400-339",
   mapsLink: "https://www.google.com/maps/search/?api=1&query=Av+Estrela+do+Sul+662+Uberlândia",
   contacts: [
-    { name: "Cleiton", link: "https://wa.me/5531999509944" },
-    { name: "Bruna", link: "https://wa.me/55556492399739" }
+    { name: "Bruna", link: "https://wa.me/55556492399739" },
+    { name: "Marina", link: "http://wa.me/5534984186829" }
   ]
 };
 
 export default function App() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
-    hours: 0,
+    hours: 0, 
     minutes: 0,
     seconds: 0
   });
@@ -47,7 +47,7 @@ export default function App() {
     attending: 'sim',
     guests: 1,
     message: '',
-    contact: 'Cleiton'
+    contact: 'Bruna'
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -72,27 +72,28 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleRSVP = (e: any) => {
+  const handleRSVP = (e: React.FormEvent) => {
     e.preventDefault();
     
     const selectedContact = EVENT_INFO.contacts.find(c => c.name === formData.contact);
     const waBaseUrl = selectedContact?.link || EVENT_INFO.contacts[0].link;
     
-    const text = `Olá! Confirmação de presença para o aniversário da Aléxia:
-Nome: ${formData.name}
+    const text = `Confirmação de presença para o aniversário da ALÉXIA!
+ Nome: ${formData.name}
 Presença: ${formData.attending === 'sim' ? 'Sim, eu vou!' : 'Não poderei ir, mas boa festa!'}
 Quantidade de pessoas: ${formData.guests}
-Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
+Mensagem: ${formData.message || 'Sem mensagem adicional.'}`;
 
     const encodedText = encodeURIComponent(text);
+
     window.location.href = `${waBaseUrl}?text=${encodedText}`;
     setIsSubmitted(true);
   };
 
   return (
     <div className="min-h-screen selection:bg-brand-primary/30 font-sans bg-brand-soft">
-{/* Alerta de surpresa movido para seção menor - não cobre a foto no mobile */}
-<motion.div 
+      {/* Alerta de surpresa */}
+      <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -102,53 +103,46 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
       </motion.div>
 
       {/* Hero Section */}
-<section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white px-6 pt-28 md:pt-20">
-        {/* Abstract Background Shapes */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white px-6 pt-28 md:pt-20">
+        {/* Background Shapes */}
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
           <motion.div 
-            animate={{ 
-              scale: [1, 1.2, 1],
-              rotate: [0, 90, 0],
-            }}
+            animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
             transition={{ duration: 20, repeat: Infinity }}
             className="absolute -top-40 -left-40 w-96 h-96 bg-brand-primary rounded-full blur-[100px]"
           />
           <motion.div 
-            animate={{ 
-              scale: [1, 1.3, 1],
-              rotate: [0, -90, 0],
-            }}
+            animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
             transition={{ duration: 15, repeat: Infinity }}
             className="absolute -bottom-40 -right-40 w-96 h-96 bg-brand-secondary rounded-full blur-[100px]"
           />
         </div>
 
-<motion.div 
+        <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: 0 }}
           className="z-10 text-center max-w-3xl"
         >
-          {/* Banner SURPRESA acima da foto - não tapa a foto */}
+          {/* SURPRESA Banner */}
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="mb-6 bg-gradient-to-r from-pink-500 via-[#A47DAB] to-pink-500 text-white px-8 py-3 rounded-2xl shadow-xl font-black text-lg inline-flex items-center gap-3"
           >
             <span>🤫</span>
-            <span>SURPRESA! Não conte para a Aléxia!</span>
+            <span>SURPRESA! Não conte para a ALÉXIA!</span>
           </motion.div>
 
           <div className="relative inline-block mb-12">
-            {/* Photo Placeholder */}
-<motion.div
+            <motion.div
               initial={{ scale: 0, rotate: -10 }}
               animate={{ scale: 1, rotate: -3 }}
               transition={{ type: "spring", delay: 0.2 }}
               className="w-56 h-56 md:w-72 md:h-72 bg-white p-4 rounded-3xl shadow-2xl relative z-10 overflow-hidden ring-8 ring-brand-primary/5"
             >
-<img 
+              <img 
                 src="/bem.png" 
-                alt="Aléxia Parreiras" 
+                alt="ALÉXIA" 
                 className="w-full h-full object-cover rounded-2xl"
               />
             </motion.div>
@@ -191,27 +185,15 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
           </div>
         </motion.div>
 
-        {/* Decorative Floating Elements */}
+        {/* Floating Elements */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40 overflow-hidden z-0">
           {[...Array(12)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute text-3xl md:text-5xl pointer-events-none select-none"
-              initial={{ 
-                x: Math.random() * 100 + "%", 
-                y: "-10vh",
-                rotate: Math.random() * 360
-              }}
-              animate={{ 
-                y: ["0vh", "110vh"],
-                rotate: [0, 360]
-              }}
-              transition={{ 
-                duration: 12 + Math.random() * 20, 
-                repeat: Infinity,
-                ease: "linear",
-                delay: Math.random() * 5
-              }}
+              initial={{ x: Math.random() * 100 + "%", y: "-10vh", rotate: Math.random() * 360 }}
+              animate={{ y: ["0vh", "110vh"], rotate: [0, 360] }}
+              transition={{ duration: 12 + Math.random() * 20, repeat: Infinity, ease: "linear", delay: Math.random() * 5 }}
             >
               {['✨', '💜', '🎂', '🥳', '🎁', '🥂', '🕺', '💃'][i % 8]}
             </motion.div>
@@ -219,7 +201,7 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
         </div>
       </section>
 
-      {/* Countdown Section */}
+      {/* Countdown */}
       <section className="py-32 bg-brand-soft px-6 relative">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div 
@@ -258,14 +240,13 @@ Mensagem: ${formData.message || 'Sem mensagem adicional'}`;
         </div>
       </section>
 
-      {/* Details Bento Grid */}
+      {/* Details */}
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-12 gap-8">
-            {/* When */}
             <motion.div 
               whileHover={{ y: -5 }}
-className="md:col-span-6 bg-white p-12 rounded-[3.5rem] shadow-xl shadow-brand-primary/5 flex flex-col justify-between border border-brand-primary/5 transition-all min-h-[340px]"
+              className="md:col-span-6 bg-white p-12 rounded-[3.5rem] shadow-xl shadow-brand-primary/5 flex flex-col justify-between border border-brand-primary/5 transition-all min-h-[340px]"
             >
               <div className="bg-brand-primary/10 text-brand-primary w-16 h-16 rounded-3xl flex items-center justify-center mb-10">
                 <Calendar className="w-8 h-8" />
@@ -279,10 +260,9 @@ className="md:col-span-6 bg-white p-12 rounded-[3.5rem] shadow-xl shadow-brand-p
               </div>
             </motion.div>
 
-            {/* Where */}
             <motion.div 
               whileHover={{ y: -8 }}
-className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white overflow-hidden relative group min-h-[400px] flex flex-col border border-white/5 active:scale-[0.98] transition-all"
+              className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white overflow-hidden relative group min-h-[400px] flex flex-col border border-white/5 active:scale-[0.98] transition-all"
             >
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex items-center justify-between mb-12">
@@ -332,24 +312,8 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
                   </button>
                 </div>
               </div>
-              
-              {/* Modern Graphic Overlays */}
-              <div className="absolute top-0 right-0 w-80 h-80 bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none group-hover:bg-brand-primary/20 transition-colors" />
-              <div className="absolute bottom-0 left-1/4 w-40 h-40 bg-brand-secondary/5 rounded-full blur-[80px] pointer-events-none" />
-              
-              <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1"/>
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#grid)" />
-                </svg>
-              </div>
             </motion.div>
 
-            {/* The Vibe (Comic) */}
             <motion.div 
               whileHover={{ rotate: 1 }}
               className="md:col-span-7 bg-brand-accent p-12 rounded-[3.5rem] border-4 border-brand-dark shadow-[15px_15px_0px_0px_rgba(50,38,53,1)] flex flex-col justify-center items-center text-center relative min-h-[280px]"
@@ -364,17 +328,16 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
               </p>
             </motion.div>
 
-            {/* Surprise Gate */}
             <motion.div 
               whileHover={{ scale: 1.02 }}
               className="md:col-span-5 bg-white p-12 rounded-[3.5rem] shadow-xl shadow-brand-primary/5 flex flex-col justify-center gap-6 border border-brand-primary/5 min-h-[280px]"
             >
-<div className="flex items-center gap-4">
+              <div className="flex items-center gap-4">
                 <div className="text-6xl animate-bounce">🤫</div>
-<div>
+                <div>
                   <h3 className="text-2xl font-display font-black text-[#A47DAB] mb-2">BICO CALADO! É DA SURPRESA</h3>
                   <p className="text-slate-500 font-bold leading-relaxed text-lg">
-                    A Aléxia não pode saber de NADA até o momento do "SURPRESA!".
+                    A ALÉXIA não pode saber de NADA até o momento do "SURPRESA!"
                   </p>
                 </div>
               </div>
@@ -383,12 +346,12 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
         </div>
       </section>
 
-      {/* RSVP Section */}
+      {/* RSVP */}
       <section id="confirmar" className="py-32 px-6 bg-brand-soft">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-display font-black text-brand-dark mb-6">Confirmar?</h2>
-            <p className="text-slate-500 text-lg font-medium">Não deixe para a última hora, Cleiton e Bruna estão ansiosos!</p>
+            <p className="text-slate-500 text-lg font-medium">Não deixe para a última hora, Bruna e Marina estão ansiosos!</p>
           </div>
 
           <motion.form 
@@ -425,7 +388,7 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
                 onClick={() => setFormData({...formData, attending: 'nao'})}
               >
                 <div className="text-4xl">😿</div>
-<div className="font-black text-sm uppercase tracking-wider">Não poderei ir</div>
+                <div className="font-black text-sm uppercase tracking-wider">Não poderei ir</div>
               </button>
             </div>
 
@@ -501,7 +464,7 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
         >
           🎁
         </motion.div>
-        <p className="text-brand-dark font-black tracking-[0.3em] uppercase text-xs mb-4">Aléxia Parreiras • Uberlândia/MG</p>
+        <p className="text-brand-dark font-black tracking-[0.3em] uppercase text-xs mb-4">ALÉXIA • Uberlândia/MG</p>
         <p className="text-slate-400 text-sm max-w-xs mx-auto italic font-medium px-6">
           Se você contar pra ela, o presente vai ter que ser o triplo do preço! 💸
         </p>
@@ -509,3 +472,4 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
     </div>
   );
 }
+
