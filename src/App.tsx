@@ -29,8 +29,8 @@ const EVENT_INFO = {
   address: "Av Estrela do Sul, 662, bairro Martins, Uberlândia - MG, CEP 38400-339",
   mapsLink: "https://www.google.com/maps/search/?api=1&query=Av+Estrela+do+Sul+662+Uberlândia",
   contacts: [
-    { name: "Cleiton", link: "https://wa.me/5531999509944" },
-    { name: "Bruna", link: "https://wa.me/55556492399739" }
+    { name: "Bruna", link: "https://wa.me/55556492399739" },
+    { name: "Cleiton", link: "https://wa.me/5531999509944" }
   ]
 };
 
@@ -388,7 +388,7 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-display font-black text-brand-dark mb-6">Confirmar?</h2>
-            <p className="text-slate-500 text-lg font-medium">Não deixe para a última hora, Cleiton e Bruna estão ansiosos!</p>
+            <p className="text-slate-500 text-lg font-medium">Não deixe para a última hora, Bruna e Cleiton estão ansiosos!</p>
           </div>
 
           <motion.form 
@@ -456,7 +456,7 @@ className="md:col-span-6 bg-[#1A1A1A] p-8 md:p-14 rounded-[4rem] text-white over
             </AnimatePresence>
 
             <div className="space-y-4">
-              <label className="text-xs font-black uppercase tracking-[0.2em] text-brand-primary ml-1 block">Quem deve saber primeiro?</label>
+              <label className="text-xs font-black uppercase tracking-[0.2em] text-brand-primary ml-1 block">Pode nos avisar por aqui</label>
               <div className="grid grid-cols-2 gap-4">
                 {EVENT_INFO.contacts.map((contact) => (
                   <button
